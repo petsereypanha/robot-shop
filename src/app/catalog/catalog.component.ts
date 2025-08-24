@@ -1,14 +1,15 @@
 import { Component } from '@angular/core';
 import {IProduct} from "./product.model";
-import {CurrencyPipe, NgForOf, NgIf} from "@angular/common";
+import {CurrencyPipe, NgClass, NgForOf, NgIf} from "@angular/common";
+import {ProductDetailsComponent} from "../product-details/product-details.component";
 
 @Component({
   selector: 'app-catalog',
   standalone: true,
   imports: [
     NgForOf,
-    NgIf,
-    CurrencyPipe
+
+    ProductDetailsComponent
   ],
   templateUrl: './catalog.component.html',
   styleUrl: './catalog.component.scss'
@@ -16,6 +17,7 @@ import {CurrencyPipe, NgForOf, NgIf} from "@angular/common";
 export class CatalogComponent {
   products: IProduct[];
   filter: string = '';
+  cart: IProduct[] = [];
 
   constructor() {
     this.products = [
@@ -194,12 +196,13 @@ export class CatalogComponent {
       },
     ];
   }
-  getImageUrl(product: IProduct): string {
-    return product.imageName;
-  }
   getFilteredProducts(){
     return this.filter === ''
         ? this.products
         : this.products.filter(p => p.category === this.filter);
+  }
+  addToCart(product: IProduct) {
+    this.cart.push(product);
+    console.log(this.cart);
   }
 }
