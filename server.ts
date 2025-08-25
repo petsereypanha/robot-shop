@@ -50,7 +50,7 @@ import { APP_BASE_HREF } from '@angular/common';
       description:
         "A robot head with an unusually large eye and teloscpic neck -- excellent for exploring high spaces.",
       name: "Large Cyclops",
-      imageName: "head-big-eye.png",
+      imageName: "assets/images/robot-parts/head-big-eye.png",
       category: "Heads",
       price: 1220.5,
       discount: 0.2,
@@ -59,7 +59,7 @@ import { APP_BASE_HREF } from '@angular/common';
       id: 17,
       description: "A spring base - great for reaching high places.",
       name: "Spring Base",
-      imageName: "base-spring.png",
+      imageName: "assets/images/robot-parts/base-spring.png",
       category: "Bases",
       price: 1190.5,
       discount: 0,
@@ -69,7 +69,7 @@ import { APP_BASE_HREF } from '@angular/common';
       description:
         "An articulated arm with a claw -- great for reaching around corners or working in tight spaces.",
       name: "Articulated Arm",
-      imageName: "arm-articulated-claw.png",
+      imageName: "assets/images/robot-parts/arm-articulated-claw.png",
       category: "Arms",
       price: 275,
       discount: 0,
@@ -79,7 +79,7 @@ import { APP_BASE_HREF } from '@angular/common';
       description:
         "A friendly robot head with two eyes and a smile -- great for domestic use.",
       name: "Friendly Bot",
-      imageName: "head-friendly.png",
+      imageName: "assets/images/robot-parts/head-friendly.png",
       category: "Heads",
       price: 945.0,
       discount: 0.2,
@@ -89,7 +89,7 @@ import { APP_BASE_HREF } from '@angular/common';
       description:
         "A large three-eyed head with a shredder for a mouth -- great for crushing light medals or shredding documents.",
       name: "Shredder",
-      imageName: "head-shredder.png",
+      imageName: "assets/images/robot-parts/head-shredder.png",
       category: "Heads",
       price: 1275.5,
       discount: 0,
@@ -99,7 +99,7 @@ import { APP_BASE_HREF } from '@angular/common';
       description:
         "A single-wheeled base with an accelerometer capable of higher speeds and navigating rougher terrain than the two-wheeled variety.",
       name: "Single Wheeled Base",
-      imageName: "base-single-wheel.png",
+      imageName: "assets/images/robot-parts/base-single-wheel.png",
       category: "Bases",
       price: 1190.5,
       discount: 0.1,
@@ -108,7 +108,7 @@ import { APP_BASE_HREF } from '@angular/common';
       id: 13,
       description: "A simple torso with a pouch for carrying items.",
       name: "Pouch Torso",
-      imageName: "torso-pouch.png",
+      imageName: "assets/images/robot-parts/torso-pouch.png",
       category: "Torsos",
       price: 785,
       discount: 0,
@@ -118,7 +118,7 @@ import { APP_BASE_HREF } from '@angular/common';
       description:
         "An arm with two independent claws -- great when you need an extra hand. Need four hands? Equip your bot with two of these arms.",
       name: "Two Clawed Arm",
-      imageName: "arm-dual-claw.png",
+      imageName: "assets/images/robot-parts/arm-dual-claw.png",
       category: "Arms",
       price: 285,
       discount: 0,
@@ -127,7 +127,7 @@ import { APP_BASE_HREF } from '@angular/common';
       id: 4,
       description: "A simple single-eyed head -- simple and inexpensive.",
       name: "Small Cyclops",
-      imageName: "head-single-eye.png",
+      imageName: "assets/images/robot-parts/head-single-eye.png",
       category: "Heads",
       price: 750.0,
       discount: 0,
@@ -137,7 +137,7 @@ import { APP_BASE_HREF } from '@angular/common';
       description:
         "An arm with a propeller -- good for propulsion or as a cooling fan.",
       name: "Propeller Arm",
-      imageName: "arm-propeller.png",
+      imageName: "assets/images/robot-parts/arm-propeller.png",
       category: "Arms",
       price: 230,
       discount: 0.1,
@@ -146,7 +146,7 @@ import { APP_BASE_HREF } from '@angular/common';
       id: 15,
       description: "A rocket base capable of high speed, controlled flight.",
       name: "Rocket Base",
-      imageName: "base-rocket.png",
+      imageName: "assets/images/robot-parts/base-rocket.png",
       category: "Bases",
       price: 1520.5,
       discount: 0,
@@ -155,7 +155,7 @@ import { APP_BASE_HREF } from '@angular/common';
       id: 10,
       description: "A short and stubby arm with a claw -- simple, but cheap.",
       name: "Stubby Claw Arm",
-      imageName: "arm-stubby-claw.png",
+      imageName: "assets/images/robot-parts/arm-stubby-claw.png",
       category: "Arms",
       price: 125,
       discount: 0,
@@ -165,7 +165,7 @@ import { APP_BASE_HREF } from '@angular/common';
       description:
         "A torso that can bend slightly at the waist and equiped with a heat guage.",
       name: "Flexible Gauged Torso",
-      imageName: "torso-flexible-gauged.png",
+      imageName: "assets/images/robot-parts/torso-flexible-gauged.png",
       category: "Torsos",
       price: 1575,
       discount: 0,
@@ -174,7 +174,7 @@ import { APP_BASE_HREF } from '@angular/common';
       id: 14,
       description: "A two wheeled base with an accelerometer for stability.",
       name: "Double Wheeled Base",
-      imageName: "base-double-wheel.png",
+      imageName: "assets/images/robot-parts/base-double-wheel.png",
       category: "Bases",
       price: 895,
       discount: 0,
@@ -184,7 +184,7 @@ import { APP_BASE_HREF } from '@angular/common';
       description:
         "A robot head with three oscillating eyes -- excellent for surveillance.",
       name: "Surveillance",
-      imageName: "head-surveillance.png",
+      imageName: "assets/images/robot-parts/head-surveillance.png",
       category: "Heads",
       price: 1255.5,
       discount: 0,
@@ -193,7 +193,7 @@ import { APP_BASE_HREF } from '@angular/common';
       id: 8,
       description: "A telescoping arm with a grabber.",
       name: "Grabber Arm",
-      imageName: "arm-grabber.png",
+      imageName: "assets/images/robot-parts/arm-grabber.png",
       category: "Arms",
       price: 205.5,
       discount: 0,
@@ -202,7 +202,7 @@ import { APP_BASE_HREF } from '@angular/common';
       id: 12,
       description: "A less flexible torso with a battery gauge.",
       name: "Gauged Torso",
-      imageName: "torso-gauged.png",
+      imageName: "assets/images/robot-parts/torso-gauged.png",
       category: "Torsos",
       price: 1385,
       discount: 0,
@@ -212,7 +212,7 @@ import { APP_BASE_HREF } from '@angular/common';
       description:
         "An inexpensive three-wheeled base. only capable of slow speeds and can only function on smooth surfaces.",
       name: "Triple Wheeled Base",
-      imageName: "base-triple-wheel.png",
+      imageName: "assets/images/robot-parts/base-triple-wheel.png",
       category: "Bases",
       price: 700.5,
       discount: 0,
@@ -260,8 +260,10 @@ import { APP_BASE_HREF } from '@angular/common';
     });
 
    server.post('/api/cart', (req, res) => {
-     const { productId, quantity = 1 } = req.body;
-     const product = products.find(p => p.id === productId);
+     const proReq = req.body;
+      const productId = proReq.id;
+     const quantity = proReq.quantity || 1;
+     const product = products.find(p => p.id === proReq.id);
 
      if (!product) {
        res.status(404).json({ error: 'Product not found' });
@@ -276,7 +278,10 @@ import { APP_BASE_HREF } from '@angular/common';
        cart.push({ productId, quantity, product });
      }
 
-     res.json({ message: 'Item added to cart', cart });
+     res.status(200).json({
+       message: 'Product added to cart successfully',
+       product: product
+     });
    });
 
     server.delete('/api/cart/:productId', (req, res) => {
@@ -302,7 +307,10 @@ import { APP_BASE_HREF } from '@angular/common';
       cart = [];
       res.json({ message: 'Cart cleared' });
     });
-
+    // Simple login endpoint
+    server.get('/.well-known/*', (req, res) => {
+      res.status(404).json({ error: 'Not found' });
+    });
     // Serve static files from /browser
     server.get('*.*', express.static(browserDistFolder, {
       maxAge: '1y'
