@@ -19,7 +19,7 @@ export class CartService {
     const currentCart = this.cart.getValue();
     const newCart = [...currentCart, product];
     this.cart.next(newCart);
-    this.http.post('/api/cart', product).subscribe({
+    this.http.post('/cart', product).subscribe({
       next: () => {
         console.log('added ' + product + ' to cart!');
       },
@@ -37,6 +37,6 @@ export class CartService {
     const currentCart = this.cart.getValue();
     const newCart = currentCart.filter((i) => i !== product);
     this.cart.next(newCart);
-    console.log('removed ' + product.name + ' from cart!');
+    console.log('/removed ' + product.name + ' from cart!');
   }
 }
