@@ -1,9 +1,10 @@
 import { APP_BASE_HREF } from '@angular/common';
-  import { CommonEngine } from '@angular/ssr';
-  import express from 'express';
-  import { fileURLToPath } from 'node:url';
-  import { dirname, join, resolve } from 'node:path';
-  import bootstrap from './src/main.server';
+import { CommonEngine } from '@angular/ssr';
+import express from 'express';
+import { fileURLToPath } from 'node:url';
+import { dirname, join, resolve } from 'node:path';
+import bootstrap from './src/main.server';
+import cors from 'cors';
 
   interface User {
     firstName: string;
@@ -230,6 +231,15 @@ import { APP_BASE_HREF } from '@angular/common';
     server.set('view engine', 'html');
     server.set('views', browserDistFolder);
 
+    // CORS configuration
+    server.use(cors({
+      origin: 'http://localhost:4200',
+      credentials: true
+    }));
+
+    // Middleware for parsing JSON
+    server.use(express.json());
+
     // Middleware for parsing JSON
     server.use(express.json());
 
@@ -307,6 +317,86 @@ import { APP_BASE_HREF } from '@angular/common';
       cart = [];
       res.json({ message: 'Cart cleared' });
     });
+
+    server.post('/api/sign-in', (req, res) => {
+      const { email, password } = req.body;
+
+      if (!email || !password) {
+        res.status(400).json({ error: 'Email and password required' });
+        return;
+      }
+
+      // Validate email format
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        res.status(400).json({ error: 'Invalid email format' });
+        return;
+      }
+
+      const user = users[email];
+      if (!user || user.password !== password) {
+        res.status(401).json({ error: 'Invalid credentials' });
+        return;
+      }
+      console.log(`User ${email} signed in successfully.`);
+      res.status(200).json({
+        message: 'Sign in successful',
+        user: {
+          firstName: user.firstName,
+          lastName: user.lastName,
+          email: user.email
+        }
+      });
+    });
+
+    server.post('/api/register', (req, res) => {
+      const { firstName, lastName, email, password } = req.body;
+
+      // Validate required fields
+      if (!firstName || !lastName || !email || !password) {
+        res.status(400).json({ error: 'All fields are required' });
+        return;
+      }
+
+      // Validate email format
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        res.status(400).json({ error: 'Invalid email format' });
+        return;
+      }
+
+      // Validate password length
+      if (password.length < 6) {
+        res.status(400).json({ error: 'Password must be at least 6 characters long' });
+        return;
+      }
+
+      // Check if user already exists
+      if (users[email]) {
+        res.status(409).json({ error: 'User already exists' });
+        return;
+      }
+
+      // Create new user
+      const newUser: User = {
+        firstName: firstName.trim(),
+        lastName: lastName.trim(),
+        email: email.toLowerCase().trim(),
+        password: password // In production, hash this password
+      };
+
+      users[email] = newUser;
+
+      res.status(201).json({
+        message: 'User registered successfully',
+        user: {
+          firstName: newUser.firstName,
+          lastName: newUser.lastName,
+          email: newUser.email
+        }
+      });
+    });
+
     // Simple login endpoint
     server.get('/.well-known/*', (req, res) => {
       res.status(404).json({ error: 'Not found' });

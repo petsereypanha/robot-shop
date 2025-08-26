@@ -20,7 +20,7 @@ export class UserService {
 
   signIn(credentials: IUserCredentials): Observable<IUser> {
     return this.http
-      .post<IUser>('/sign-in', credentials)
+      .post<IUser>('/api/sign-in', credentials)
       .pipe(map((user: IUser) => {
         this.user.next(user);
         return user;
